@@ -24,7 +24,7 @@ public class ReviewRestController {
 	}
 	
 	// 리뷰 세부 화면을 위한 메서드
-	@GetMapping("/review/{videoId}/{reviewId}")
+	@GetMapping("/review/{reviewId}")
 	public Review getReviewById(int reviewId) {
 		return reviewService.selectOne(reviewId);
 	}
@@ -37,14 +37,14 @@ public class ReviewRestController {
 	}
 	
 	// 리뷰 수정
-	@PutMapping("/review/{videoId}/{reviewId}")
+	@PutMapping("/review")
 	public ResponseEntity<Void> updateReview(@RequestBody Review review) {
 		reviewService.updateReview(review);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
 	// 리뷰 삭제
-	@DeleteMapping("/review/{videoId}/{reviewId}")
+	@DeleteMapping("/review/{reviewId}")
 	public ResponseEntity<Void> deleteReview(@PathVariable int reviewId) {
 		reviewService.deleteReview(reviewId);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);

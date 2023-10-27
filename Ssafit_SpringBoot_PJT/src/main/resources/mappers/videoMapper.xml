@@ -4,7 +4,6 @@
 <!-- name space는 UserRepo의 fully qualified name으로 설정한다. -->
 <mapper namespace="com.example.demo.model.dao.VideoDao">
 
-	<!-- User 정보를 조회한다. -->
 
 	<!-- <insert id="insert" parameterType="Car"> INSERT INTO car VALUES(#{vin}, 
 		#{modelName}, #{color}, #{mileage},#{img}) </insert> -->

@@ -12,6 +12,17 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Autowired
     private ReviewDao reviewDao;
+    
+    @Autowired
+    public void setDao(ReviewDao reviewDao) {
+        this.reviewDao = reviewDao;
+    }
+
+    public ReviewDao getDao() {
+        return reviewDao;
+    }
+    
+
 
     public List<Review> selectAll() {
         return reviewDao.selectAll();

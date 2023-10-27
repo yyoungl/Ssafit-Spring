@@ -6,8 +6,8 @@
 
 	<!-- 회원가입 -->
 	<insert id="insertUser" parameterType="User">
-		INSERT INTO USER VALUES(#{ID},
-		#{PASSWORD}, #{EMAIL})
+		INSERT INTO USER VALUES(#{id},
+		#{password}, #{email})
 	</insert>
 
 	<!-- 로그인 -->

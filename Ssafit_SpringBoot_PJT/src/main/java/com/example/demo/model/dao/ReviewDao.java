@@ -3,10 +3,13 @@ package com.example.demo.model.dao;
 
 import java.util.ArrayList;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.example.demo.model.dto.Review;
 
 
 // DB 흉내
+
 public interface ReviewDao {
 
 	// 게시글 전체 조회

@@ -7,15 +7,15 @@
 	<!-- 리뷰 조회 = videoId 일치하는 것만 -->
 	<select id="selectReview" parameterType="int"
 		resultType="Review">
-		SELECT * FROM VIDEO WHERE ID = #{VIDEOID};
+		SELECT * FROM REVIEW WHERE VIDEOID = #{VIDEOID};
 	</select>
 
 	<!-- 리뷰 등록 -->
-	<select id="insertReview" parameterType="Review">
+	<insert id="insertReview" parameterType="Review">
 		INSERT INTO
 		REVIEW(VIDEOID, TITLE, WRITER, CONTENT) VALUES(#{videoId}, #{title},
 		#{writer}, #{content});
-	</select>
+	</insert>
 
 
 	<!-- 리뷰 수정 -->
@@ -34,5 +34,15 @@
 		REVIEWID = #{reviewId}
 	</delete>
 
+
+    <!-- 리뷰 상세 -->
+    <select id = "selectOne" parameterType = "int" resultType = "Review">
+        SELECT * FROM REVIEW WHERE reviewID = #{reviewId}
+    </select>
+    
+    <!-- 리뷰 조회 -->
+    <select id = "selectAll" resultType = "Review">
+        SELECT * FROM REVIEW;
+    </select>
 
 </mapper>
