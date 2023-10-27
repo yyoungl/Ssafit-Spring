@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- name space는 UserRepo의 fully qualified name으로 설정한다. -->
+<mapper namespace="com.example.demo.model.dao.VideoDao">
+
+	<!-- User 정보를 조회한다. -->
+
+	<!-- <insert id="insert" parameterType="Car"> INSERT INTO car VALUES(#{vin}, 
+		#{modelName}, #{color}, #{mileage},#{img}) </insert> -->
+		
+	<!-- 영상 상세 -->
+	<select id="selectVideoById" resultType = "Video"> 
+		SELECT * FROM VIDEO WHERE ID = #{videoId}"
+	</select>
+	<!-- 영상 조회수 순서대로 조회 -->
+	<select id="selectByView" resultType="Video">
+		SELECT * FROM VIDEO ORDER BY VIEWCNT DESC
+	</select>
+	
+	<!-- 운동 부위별로 조회 -->
+	<select id="selectByPart" parameterType="String" resultType = "Video">
+		SELECT * FROM VIDEO WHERE PART = #{part}
+	</select>
+	
+	<!-- 영상 전체 조회 -->
+	<select id="select" resultType = "Video">
+		SELECT * FROM VIDEO;
+	</select>
+	
+</mapper>
