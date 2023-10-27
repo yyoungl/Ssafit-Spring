@@ -9,8 +9,8 @@
 		#{modelName}, #{color}, #{mileage},#{img}) </insert> -->
 		
 	<!-- 영상 상세 -->
-	<select id="selectVideoById" resultType = "Video"> 
-		SELECT * FROM VIDEO WHERE ID = #{videoId}"
+	<select id="selectVideoById" parameterType = "int" resultType = "Video"> 
+		SELECT * FROM VIDEO WHERE ID = #{videoId}
 	</select>
 	<!-- 영상 조회수 순서대로 조회 -->
 	<select id="selectByView" resultType="Video">
