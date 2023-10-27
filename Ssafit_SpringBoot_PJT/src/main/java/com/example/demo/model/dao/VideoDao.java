@@ -9,5 +9,4 @@ public interface VideoDao {
 
     Video selectVideoById(int videoId);
 
-    // ... other methods for video operations ...
 }

@@ -17,23 +17,23 @@ public class ReviewServiceImpl implements ReviewService {
         return reviewDao.selectAll();
     }
 
-    public List<Review> selectReview(String videoId) {
+    public List<Review> selectReview(int videoId) {
         return reviewDao.selectReview(videoId);
     }
 
-    public Review selectOne(String videoId, int reviewId) {
-        return reviewDao.selectOne(videoId, reviewId);
+    public Review selectOne(int reviewId) {
+        return reviewDao.selectOne(reviewId);
     }
 
     public void insertReview(Review review) {
         reviewDao.insertReview(review);
     }
 
-    public void updateReview(String videoId, int reviewId, String newTitle, String newContent) {
-        reviewDao.updateReview(videoId, reviewId, newTitle, newContent);
+    public void updateReview(Review review) {
+        reviewDao.updateReview(review);
     }
 
-    public void deleteReview(String videoId, int reviewId) {
-        reviewDao.deleteReview(videoId, reviewId);
+    public void deleteReview(int reviewId) {
+        reviewDao.deleteReview(reviewId);
     }
 }

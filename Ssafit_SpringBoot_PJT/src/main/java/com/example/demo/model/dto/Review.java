@@ -3,7 +3,7 @@ package com.example.demo.model.dto;
 import java.util.Date;
 
 public class Review {
-	private String videoId;
+	private int videoId;
 	private int reviewId;
 	private String title;
 	private String writer;
@@ -15,7 +15,7 @@ public class Review {
 		
 	}
 
-	public Review(String videoId, int reviewId, String title, String writer, String content, int viewCnt) {
+	public Review(int videoId, int reviewId, String title, String writer, String content, int viewCnt) {
 		super();
 		this.videoId = videoId;
 		this.reviewId = reviewId;
@@ -26,11 +26,11 @@ public class Review {
 		this.viewCnt = 0;
 	}
 
-	public String getVideoId() {
+	public int getVideoId() {
 		return videoId;
 	}
 
-	public void setVideoId(String videoId) {
+	public void setVideoId(int videoId) {
 		this.videoId = videoId;
 	}
 

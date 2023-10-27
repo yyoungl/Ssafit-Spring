@@ -4,7 +4,7 @@ package com.example.demo.model.dto;
 import java.util.Date;
 
 public class Video {
-	private String videoId;
+	private int videoId;
 	private String title;
 	private String fitPartName;
 	private String channelName;
@@ -15,7 +15,7 @@ public class Video {
 	public Video() {
 		
 	}
-	public Video(String videoId, String title, String fitPartName, String channelName, String url) {
+	public Video(int videoId, String title, String fitPartName, String channelName, String url) {
 		super();
 		this.videoId = videoId;
 		this.title = title;
@@ -23,10 +23,10 @@ public class Video {
 		this.channelName = channelName;
 		this.url = url;
 	}
-	public String getVideoId() {
+	public int getVideoId() {
 		return videoId;
 	}
-	public void setVideoId(String videoId) {
+	public void setVideoId(int videoId) {
 		this.videoId = videoId;
 	}
 	public String getTitle() {

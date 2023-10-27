@@ -19,14 +19,14 @@ public class ReviewRestController {
 	
 	// 비디오 목록에 리뷰 리스트 보여주기 위해서
 	@GetMapping("/reviews/{videoId}")
-	public List<Review> getReviewsByVideoId(@PathVariable String videoId) {
+	public List<Review> getReviewsByVideoId(@PathVariable int videoId) {
 		return reviewService.selectReview(videoId);
 	}
 	
 	// 리뷰 세부 화면을 위한 메서드
 	@GetMapping("/review/{videoId}/{reviewId}")
-	public Review getReviewById(@PathVariable String videoId, @PathVariable int reviewId) {
-		return reviewService.selectOne(videoId, reviewId);
+	public Review getReviewById(int reviewId) {
+		return reviewService.selectOne(reviewId);
 	}
 	
 	// 리뷰 등록
@@ -38,15 +38,15 @@ public class ReviewRestController {
 	
 	// 리뷰 수정
 	@PutMapping("/review/{videoId}/{reviewId}")
-	public ResponseEntity<Void> updateReview(@PathVariable String videoId, @PathVariable int reviewId, @RequestBody Review review) {
-		reviewService.updateReview(videoId, reviewId, review.getTitle(), review.getContent());
+	public ResponseEntity<Void> updateReview(@RequestBody Review review) {
+		reviewService.updateReview(review);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
 	// 리뷰 삭제
 	@DeleteMapping("/review/{videoId}/{reviewId}")
-	public ResponseEntity<Void> deleteReview(@PathVariable String videoId, @PathVariable int reviewId) {
-		reviewService.deleteReview(videoId, reviewId);
+	public ResponseEntity<Void> deleteReview(@PathVariable int reviewId) {
+		reviewService.deleteReview(reviewId);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 }

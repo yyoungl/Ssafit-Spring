@@ -7,13 +7,13 @@ public interface ReviewService {
 
     List<Review> selectAll();
 
-    List<Review> selectReview(String videoId);
+    List<Review> selectReview(int videoId);
 
-    Review selectOne(String videoId, int reviewId);
+    Review selectOne(int reviewId);
 
     void insertReview(Review review);
 
-    void updateReview(String videoId, int reviewId, String newTitle, String newContent);
+    void updateReview(Review review);
 
-    void deleteReview(String videoId, int reviewId);
+    void deleteReview(int reviewId);
 }
